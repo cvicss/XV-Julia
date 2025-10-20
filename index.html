@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años - Julia Janette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        
+        .bg-beige { background-color: #F5F5DC; }
+        .bg-gold { background-color: #D4AF37; }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .sparkle {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sparkle::before {
+            content: '♥';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            animation: sparkle 3s infinite;
+        }
+        
+        .sparkle::after {
+            content: '♥';
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            animation: sparkle 3s infinite 1.5s;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        .golden-gradient {
+            background: linear-gradient(135deg, #D4AF37, #FFD700, #B8860B);
+        }
+        
+        .beige-gradient {
+            background: linear-gradient(135deg, #F5F5DC, #F0E68C, #DDD8C0);
+        }
+    </style>
+</head>
+<body class="font-poppins bg-beige text-gray-800">
+    <!-- Hero Section -->
+    <section class="min-h-full flex items-center justify-center sparkle relative py-20" style="background-image: url('https://i.pinimg.com/1200x/5b/69/04/5b6904eaf79c25917983f5d89e50356f.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="text-center text-white px-6 fade-in-up max-w-4xl mx-auto relative z-10">
+            <div class="mb-20">
+                <h1 style=font-size:100px class="font-playfair text-5xl md:text-7xl font-bold mb-8">XV Años</h1>
+                <h2 class="font-playfair text-3xl md:text-5xl mb-20">Julia Janette</h2>
+            </div>
+            
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-8 mb-16 max-w-md mx-auto">
+                <p class="text-2xl md:text-3xl font-semibold mb-3">27 de Diciembre</p>
+                <p class="text-xl md:text-2xl">16:30 hrs</p>
+            </div>
+            
+            <!-- Music Player -->
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 max-w-sm mx-auto">
+                <div class="flex items-center justify-center space-x-4 mb-3">
+                    <button id="playPauseBtn" class="bg-white text-gold rounded-full p-3 hover:bg-opacity-90 transition-all shadow-lg">
+                        <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <svg id="pauseIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                    </button>
+                    <div class="text-center">
+                        <p class="text-white font-medium text-lg">Photograph</p>
+                        <p class="text-white text-sm opacity-80">Ed Sheeran</p>
+                    </div>
+                </div>
+            </div>
+            
+            <audio id="backgroundMusic" loop autoplay>
+                <source src="Photograph.mp3" type="audio/wav">
+            </audio>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="font-playfair text-4xl text-gold mb-6">Ubicación del evento</h3>
+                <div class="bg-white rounded-lg shadow-lg p-8 border-2 border-gold">
+                    <p class="text-xl mb-4 font-medium">Parroquia San Nicolás de Tolentino</p>
+                    <p class="text-gray-600">25 José María Morelos, Cuernavaca, Morelos</p>
+                </div>
+            </div>
+            
+            <!-- Maps Embed -->
+            <div class="mb-12 fade-in-up">
+                <div class="bg-white rounded-lg shadow-lg p-4 border-2 border-gold">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8!2d-99.2!3d18.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU0JzAwLjAiTiA5OcKwMTInMDAuMCJX!5e0!3m2!1ses!2smx!4v1"
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="mt-4 text-center">
+                        <a href="https://maps.app.goo.gl/q6j8TgtoGbEhPQke6?g_st=ac" target="_blank" rel="noopener noreferrer" 
+                           class="bg-gold text-white px-6 py-3 rounded-full hover:bg-yellow-600 transition-colors inline-flex items-center space-x-2">
+                            <span>Ver en Google Maps</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reception Section -->
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="font-playfair text-4xl text-gold mb-6">Recepción</h3>
+                <div class="bg-white rounded-lg shadow-lg p-4 border-2 border-gold">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8!2d-99.2!3d18.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU0JzAwLjAiTiA5OcKwMTInMDAuMCJX!5e0!3m2!1ses!2smx!4v2"
+                        width="100%" 
+                        height="300" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="mt-4 text-center">
+                        <a href="https://maps.app.goo.gl/mmwsoEtKcZmMs3iN7?g_st=ac" target="_blank" rel="noopener noreferrer" 
+                           class="bg-gold text-white px-6 py-3 rounded-full hover:bg-yellow-600 transition-colors inline-flex items-center space-x-2">
+                            <span>Ver en Google Maps</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitation Quote -->
+    <section class="py-16 beige-gradient">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in-up">
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg p-12 shadow-lg border-2 border-gold">
+                <svg class="w-12 h-12 text-gold mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                </svg>
+                <p class="font-playfair text-2xl md:text-3xl text-gray-700 mb-6 italic leading-relaxed">
+                    "Hay instantes que marcan el cierre de un ciclo y el inicio de uno nuevo. Lo que los hace inolvidables es compartirlos con personas especiales y quiero que tú seas una de ellas."
+                </p>
+                <p class="text-gold font-semibold text-xl">- Julia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="py-16 golden-gradient">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in-up">
+            <h3 class="font-playfair text-4xl text-white mb-8">Faltan</h3>
+            <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
+                    <div id="days" class="text-4xl font-bold text-white">0</div>
+                    <div class="text-white">Días</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
+                    <div id="hours" class="text-4xl font-bold text-white">0</div>
+                    <div class="text-white">Horas</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
+                    <div id="minutes" class="text-4xl font-bold text-white">0</div>
+                    <div class="text-white">Minutos</div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6">
+                    <div id="seconds" class="text-4xl font-bold text-white">0</div>
+                    <div class="text-white">Segundos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Mentions -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto fade-in-up">
+            <h3 class="font-playfair text-4xl text-gold text-center mb-12">Menciones Especiales</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-beige rounded-lg shadow-lg p-8 border-2 border-gold text-center">
+                    <h4 class="text-2xl font-semibold text-gold mb-4">Mamá</h4>
+                    <p class="text-xl text-gray-700">Maritza Hernández</p>
+                </div>
+                <div class="bg-beige rounded-lg shadow-lg p-8 border-2 border-gold text-center">
+                    <h4 class="text-2xl font-semibold text-gold mb-4">Papá</h4>
+                    <p class="text-xl text-gray-700">Gaudencio Serrano</p>
+                </div>
+                <div class="bg-beige rounded-lg shadow-lg p-8 border-2 border-gold text-center">
+                    <h4 class="text-2xl font-semibold text-gold mb-4">Madrina</h4>
+                    <p class="text-xl text-gray-700">Angela Pichardo</p>
+                </div>
+                <div class="bg-beige rounded-lg shadow-lg p-8 border-2 border-gold text-center">
+                    <h4 class="text-2xl font-semibold text-gold mb-4">Padrino</h4>
+                    <p class="text-xl text-gray-700">Alfredo Gómez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitation Section -->
+    <section class="py-20 px-6 beige-gradient">
+        <div class="max-w-4xl mx-auto text-center fade-in-up">
+            <h3 class="font-playfair text-4xl text-gold mb-8">Te Invito a Celebrar</h3>
+            <div class="bg-white rounded-lg shadow-lg p-12 border-2 border-gold">
+                <svg class="w-16 h-16 text-gold mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <p class="font-playfair text-2xl md:text-3xl text-gray-700 mb-6 leading-relaxed">
+                    Acompáñame en este momento tan especial donde celebraré mis quince años rodeada de las personas que más amo.
+                </p>
+                <p class="text-gold font-semibold text-xl">¡Tu presencia será el mejor regalo!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You -->
+    <section class="py-16 beige-gradient">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in-up">
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg p-12 shadow-lg border-2 border-gold">
+                <h3 class="font-playfair text-3xl text-gold mb-6">Gracias por Confirmar</h3>
+                <p class="text-xl text-gray-700 mb-8">Tu presencia hará de este un evento muy especial.</p>
+                
+                <button id="addToCalendar" class="bg-gold text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-600 transition-colors inline-flex items-center space-x-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span>Agregar al Calendario</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    // Remove visible class when element goes out of view
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Music Player
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play().catch(e => console.log('Audio play failed:', e));
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                audio.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2025-12-27T16:30:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="text-white text-2xl">¡El evento ha comenzado!</div>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Add to Calendar
+        document.getElementById('addToCalendar').addEventListener('click', () => {
+            const eventDetails = {
+                title: 'XV Años - Julia Janette',
+                start: '20251227T163000',
+                end: '20251227T230000',
+                description: 'Celebración de los XV años de Julia Janette',
+                location: 'Parroquia San Nicolás de Tolentino, 25 José María Morelos Cuernavaca, Morelos'
+            };
+
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Julia Janette//XV Años//ES
+BEGIN:VEVENT
+UID:${Date.now()}@juliaxv.com
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTSTART:${eventDetails.start}
+DTEND:${eventDetails.end}
+SUMMARY:${eventDetails.title}
+DESCRIPTION:${eventDetails.description}
+LOCATION:${eventDetails.location}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'XV-Anos-Julia-Janette.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99142317921f144c',t:'MTc2MDkxNzQwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
